@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		40098CD7259FFD8700407120 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40098CD6259FFD8700407120 /* DashboardViewController.swift */; };
 		402A1BF125A2C896005A3046 /* CastleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A1BF025A2C896005A3046 /* CastleCell.swift */; };
+		40436DBB25AA112500B24B4A /* CastleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40436DBA25AA112500B24B4A /* CastleItem.swift */; };
 		40590794259E2A3E00B98AB4 /* TurnService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40590793259E2A3E00B98AB4 /* TurnService.swift */; };
 		40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40590796259E2F5100B98AB4 /* OutcomeService.swift */; };
 		4059079A259E2FBE00B98AB4 /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40590799259E2FBE00B98AB4 /* Outcome.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		40098CD6259FFD8700407120 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		402A1BF025A2C896005A3046 /* CastleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleCell.swift; sourceTree = "<group>"; };
+		40436DBA25AA112500B24B4A /* CastleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleItem.swift; sourceTree = "<group>"; };
 		40590793259E2A3E00B98AB4 /* TurnService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnService.swift; sourceTree = "<group>"; };
 		40590796259E2F5100B98AB4 /* OutcomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeService.swift; sourceTree = "<group>"; };
 		40590799259E2FBE00B98AB4 /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				40590799259E2FBE00B98AB4 /* Outcome.swift */,
 				409D530E259A3204002C1509 /* Turm.swift */,
 				405907B8259E3EF200B98AB4 /* ShopItem.swift */,
+				40436DBA25AA112500B24B4A /* CastleItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				409D5308259A30EF002C1509 /* Kingdom.swift in Sources */,
 				405907AC259E3C7800B98AB4 /* PerformBarbarianTurn.swift in Sources */,
 				405907B9259E3EF200B98AB4 /* ShopItem.swift in Sources */,
+				40436DBB25AA112500B24B4A /* CastleItem.swift in Sources */,
 				405907B2259E3E6B00B98AB4 /* CreateCastle.swift in Sources */,
 				409D52F3259A30A2002C1509 /* SceneDelegate.swift in Sources */,
 				409D530C259A314A002C1509 /* Castle.swift in Sources */,
