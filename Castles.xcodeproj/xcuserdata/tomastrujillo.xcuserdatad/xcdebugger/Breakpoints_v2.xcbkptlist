@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7EC5FE93-7BFF-48CC-AA33-C40AA21DD603"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71CE7B80-1B97-490D-B3EB-3CFFD26FF56A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Castles/Scenes/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "fillTurnStack(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71CE7B80-1B97-490D-B3EB-3CFFD26FF56A - 15618da9af695a45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Castles.DashboardViewController.(fillTurnStack in _6E5B7815F18BC3800E3E773A592BB989)(with: Swift.Array&lt;Castles.TurnViewModel&gt;) -&gt; ()"
+                  moduleName = "Castles"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomastrujillo/Developer/CodingWithTom/UIKit/Castles/Castles/Scenes/Dashboard/DashboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "158">
+               </Location>
+               <Location
+                  uuid = "71CE7B80-1B97-490D-B3EB-3CFFD26FF56A - cf95ede15261ce87"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Castles.DashboardViewController.(fillTurnStack in _6E5B7815F18BC3800E3E773A592BB989)(with: Swift.Array&lt;Castles.TurnViewModel&gt;) -&gt; ()"
+                  moduleName = "Castles"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomastrujillo/Developer/CodingWithTom/UIKit/Castles/Castles/Scenes/Dashboard/DashboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "149"
+                  endingLineNumber = "149"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F357419-8348-4BC6-B903-5E96DCFF4BBD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Castles/Scenes/Dashboard/DashboardViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "observe()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
