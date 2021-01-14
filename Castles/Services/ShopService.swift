@@ -58,19 +58,19 @@ private extension ShopServiceAdapter {
   }
   
   func retrieveData() {
-//    if let data = try? Data(contentsOf: fileURL), let items = try? JSONDecoder().decode([ShopItem].self, from: data) {
-//      self.items = items
-//    } else {
-//      self.items = ShopServiceAdapter.refreshedItems()
-//    }
+    if let data = try? Data(contentsOf: fileURL), let items = try? JSONDecoder().decode([ShopItem].self, from: data) {
+      self.items = items
+    } else {
+      self.items = ShopServiceAdapter.refreshedItems()
+    }
   }
   
   func saveData() {
-//    do {
-//      let data = try JSONEncoder().encode(items)
-//      try data.write(to: fileURL)
-//    } catch {
-//      print("Error saving! \(error)")
-//    }
+    do {
+      let data = try JSONEncoder().encode(items)
+      try data.write(to: fileURL)
+    } catch {
+      print("Error saving! \(error)")
+    }
   }
 }

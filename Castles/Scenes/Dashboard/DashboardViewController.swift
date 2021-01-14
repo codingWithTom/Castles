@@ -78,7 +78,7 @@ final class DashboardViewController: UIViewController {
   }
   
   @IBAction private func didTapShop(sender: Any?) {
-    print("Tapped")
+    navigationController?.present(UINavigationController(rootViewController: ShopViewController()), animated: true, completion: nil)
   }
   
   @IBAction private func didTapNext(sender: Any?) {

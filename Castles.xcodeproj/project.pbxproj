@@ -24,6 +24,13 @@
 		405907B9259E3EF200B98AB4 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405907B8259E3EF200B98AB4 /* ShopItem.swift */; };
 		405907BC259E3FF600B98AB4 /* UseCastleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405907BB259E3FF600B98AB4 /* UseCastleItem.swift */; };
 		405907BF259E405300B98AB4 /* PurchaseShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405907BE259E405300B98AB4 /* PurchaseShopItem.swift */; };
+		406C0E9B25AE912400C05870 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0E9A25AE912400C05870 /* ShopViewModel.swift */; };
+		406C0E9F25AE915700C05870 /* GetShopItemPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0E9E25AE915700C05870 /* GetShopItemPublisher.swift */; };
+		406C0EA225AE926400C05870 /* CastleItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0EA125AE926400C05870 /* CastleItemPresenter.swift */; };
+		406C0EA625AE950100C05870 /* ShopItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0EA525AE950100C05870 /* ShopItemPresenter.swift */; };
+		406C0EA925AE96D800C05870 /* GetCastles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0EA825AE96D800C05870 /* GetCastles.swift */; };
+		406C0EAC25AE978B00C05870 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0EAB25AE978B00C05870 /* ShopViewController.swift */; };
+		406C0EAF25AE99F700C05870 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0EAE25AE99F700C05870 /* ShopCell.swift */; };
 		409D52F1259A30A2002C1509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D52F0259A30A2002C1509 /* AppDelegate.swift */; };
 		409D52F3259A30A2002C1509 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D52F2259A30A2002C1509 /* SceneDelegate.swift */; };
 		409D52F8259A30A2002C1509 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409D52F6259A30A2002C1509 /* Main.storyboard */; };
@@ -61,6 +68,13 @@
 		405907B8259E3EF200B98AB4 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
 		405907BB259E3FF600B98AB4 /* UseCastleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCastleItem.swift; sourceTree = "<group>"; };
 		405907BE259E405300B98AB4 /* PurchaseShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseShopItem.swift; sourceTree = "<group>"; };
+		406C0E9A25AE912400C05870 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		406C0E9E25AE915700C05870 /* GetShopItemPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShopItemPublisher.swift; sourceTree = "<group>"; };
+		406C0EA125AE926400C05870 /* CastleItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleItemPresenter.swift; sourceTree = "<group>"; };
+		406C0EA525AE950100C05870 /* ShopItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemPresenter.swift; sourceTree = "<group>"; };
+		406C0EA825AE96D800C05870 /* GetCastles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCastles.swift; sourceTree = "<group>"; };
+		406C0EAB25AE978B00C05870 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		406C0EAE25AE99F700C05870 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		409D52ED259A30A2002C1509 /* Castles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Castles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409D52F0259A30A2002C1509 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		409D52F2259A30A2002C1509 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +112,7 @@
 			children = (
 				40098CD9259FFD8C00407120 /* Dashboard */,
 				40FBBA3C25A55EFF0019BD72 /* Outcome */,
+				406C0E9925AE911A00C05870 /* Shop */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -117,9 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				405907B1259E3E6B00B98AB4 /* CreateCastle.swift */,
+				406C0EA825AE96D800C05870 /* GetCastles.swift */,
 				405907A1259E3AB400B98AB4 /* GetCastlesPublisher.swift */,
 				405907A4259E3B2A00B98AB4 /* GetGoldPublisher.swift */,
 				405907A7259E3C2A00B98AB4 /* GetOutcomePublisher.swift */,
+				406C0E9E25AE915700C05870 /* GetShopItemPublisher.swift */,
 				40AC13D125A0031A00CB81E7 /* GetTurnPublisher.swift */,
 				405907AE259E3D6C00B98AB4 /* MoveToNextTurn.swift */,
 				405907AB259E3C7800B98AB4 /* PerformBarbarianTurn.swift */,
@@ -128,6 +145,16 @@
 				405907BB259E3FF600B98AB4 /* UseCastleItem.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		406C0E9925AE911A00C05870 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				406C0E9A25AE912400C05870 /* ShopViewModel.swift */,
+				406C0EAB25AE978B00C05870 /* ShopViewController.swift */,
+				406C0EAE25AE99F700C05870 /* ShopCell.swift */,
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		409D52E4259A30A2002C1509 = {
@@ -194,6 +221,8 @@
 				40AC13D725A007B600CB81E7 /* CastlePresenter.swift */,
 				40AC13DE25A008EE00CB81E7 /* CurrencyPresenter.swift */,
 				40FBBA3925A556370019BD72 /* TurnPresenter.swift */,
+				406C0EA125AE926400C05870 /* CastleItemPresenter.swift */,
+				406C0EA525AE950100C05870 /* ShopItemPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -279,11 +308,14 @@
 			files = (
 				405907AF259E3D6C00B98AB4 /* MoveToNextTurn.swift in Sources */,
 				40098CD7259FFD8700407120 /* DashboardViewController.swift in Sources */,
+				406C0EA925AE96D800C05870 /* GetCastles.swift in Sources */,
 				405907B5259E3EEA00B98AB4 /* ShopService.swift in Sources */,
 				40AC13DF25A008EE00CB81E7 /* CurrencyPresenter.swift in Sources */,
 				409D530F259A3204002C1509 /* Turm.swift in Sources */,
 				405907A8259E3C2A00B98AB4 /* GetOutcomePublisher.swift in Sources */,
+				406C0EAF25AE99F700C05870 /* ShopCell.swift in Sources */,
 				40AC13D825A007B600CB81E7 /* CastlePresenter.swift in Sources */,
+				406C0E9F25AE915700C05870 /* GetShopItemPublisher.swift in Sources */,
 				405907A5259E3B2A00B98AB4 /* GetGoldPublisher.swift in Sources */,
 				405907BF259E405300B98AB4 /* PurchaseShopItem.swift in Sources */,
 				409D5313259A3417002C1509 /* KingdomService.swift in Sources */,
@@ -294,9 +326,11 @@
 				402A1BF125A2C896005A3046 /* CastleCell.swift in Sources */,
 				405907BC259E3FF600B98AB4 /* UseCastleItem.swift in Sources */,
 				409D52F1259A30A2002C1509 /* AppDelegate.swift in Sources */,
+				406C0EA625AE950100C05870 /* ShopItemPresenter.swift in Sources */,
 				40590794259E2A3E00B98AB4 /* TurnService.swift in Sources */,
 				4059079E259E39A600B98AB4 /* PerformPlayerTurn.swift in Sources */,
 				40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */,
+				406C0E9B25AE912400C05870 /* ShopViewModel.swift in Sources */,
 				40AC13CF25A0023300CB81E7 /* DashboardViewModel.swift in Sources */,
 				40FBBA3A25A556370019BD72 /* TurnPresenter.swift in Sources */,
 				40AC13D225A0031A00CB81E7 /* GetTurnPublisher.swift in Sources */,
@@ -308,6 +342,8 @@
 				405907B2259E3E6B00B98AB4 /* CreateCastle.swift in Sources */,
 				409D52F3259A30A2002C1509 /* SceneDelegate.swift in Sources */,
 				409D530C259A314A002C1509 /* Castle.swift in Sources */,
+				406C0EA225AE926400C05870 /* CastleItemPresenter.swift in Sources */,
+				406C0EAC25AE978B00C05870 /* ShopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
