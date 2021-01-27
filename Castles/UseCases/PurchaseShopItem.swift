@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PurchaseShopItem {
-  func execute(item: ShopItem)
+  func execute(item: ShopItem) -> Result<Void, CastlesError>
 }
 
 final class PurchaseShopItemAdapter: PurchaseShopItem {
@@ -22,8 +22,13 @@ final class PurchaseShopItemAdapter: PurchaseShopItem {
     self.dependencies = dependencies
   }
   
-  func execute(item: ShopItem) {
-    dependencies.kingdomService.modifyGoldWith(quantity: -item.price)
-    dependencies.shopService.decreaseQuantity(for: item)
+  func execute(item: ShopItem) -> Result<Void, CastlesError> {
+    do {
+      try dependencies.kingdomService.modifyGoldWith(quantity: -item.price)
+      dependencies.shopService.decreaseQuantity(for: item)
+      return .success(())
+    } catch {
+      return .failure(error as? CastlesError ?? .unknown)
+    }
   }
 }

@@ -15,6 +15,7 @@ struct ShopItemViewModel: Hashable {
   let quantity: String
   let imageName: String
   let isSystemImage: Bool
+  let isAvailable: Bool
 }
 
 final class ShopViewModel {
@@ -33,6 +34,7 @@ final class ShopViewModel {
     }
   }
   @Published var items: [ShopItemViewModel] = []
+  @Published var errorMessage: ErrorViewModel?
   var castleNames: [String] {
     return dependencies.getCastles.execute().map { $0.name }
   }
@@ -53,8 +55,12 @@ final class ShopViewModel {
       let castleItem = item.wrappedItem as? CastleItem
     else { return }
     let castle = dependencies.getCastles.execute()[index]
-    dependencies.purchaseShopItem.execute(item: item)
-    dependencies.useCastleItem.execute(item: castleItem, castle: castle)
+    let outcome = dependencies.purchaseShopItem.execute(item: item)
+    if case let .failure(error) = outcome {
+      errorMessage = ErrorPresenter.viewModel(from: error)
+    } else {
+      dependencies.useCastleItem.execute(item: castleItem, castle: castle)
+    }
   }
 }
 

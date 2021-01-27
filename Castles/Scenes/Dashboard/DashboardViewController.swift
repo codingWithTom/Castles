@@ -61,10 +61,7 @@ final class DashboardViewController: UIViewController {
   @IBOutlet private weak var turnStackView: UIStackView!
   private var dataSource: UICollectionViewDiffableDataSource<Section, DashboardItem>?
   private var viewModel = DashboardViewModel()
-  private var goldSubscriber: AnyCancellable?
-  private var castleSubscriber: AnyCancellable?
-  private var outcomeSubscriber: AnyCancellable?
-  private var turnSubscriber: AnyCancellable?
+  private var subscriptions = Set<AnyCancellable>()
   private var state: DashboardState = .waitingForPlayer {
     didSet {
       updateUI()
@@ -113,24 +110,28 @@ extension DashboardViewController: UICollectionViewDelegate {
 
 private extension DashboardViewController {
   func observe() {
-    goldSubscriber = viewModel.$goldAmount.receive(on: RunLoop.main).sink { [weak self] in
+    viewModel.$goldAmount.receive(on: RunLoop.main).sink { [weak self] in
       self?.goldLabel.text = $0
-    }
-    castleSubscriber = viewModel.$castles.receive(on: RunLoop.main).sink { [weak self] in
+    }.store(in: &subscriptions)
+    viewModel.$castles.receive(on: RunLoop.main).sink { [weak self] in
       self?.updateCastlesWith(viewModels: $0)
-    }
-    outcomeSubscriber = viewModel.$outcome.receive(on: RunLoop.main).sink { [weak self] in
+    }.store(in: &subscriptions)
+    viewModel.$outcome.receive(on: RunLoop.main).sink { [weak self] in
       guard
         let outcome = $0,
         let outcomeScene = OutcomeViewController.outcomeScene(with: outcome)
       else { return }
       self?.present(outcomeScene, animated: true, completion: nil)
-    }
-    turnSubscriber = viewModel.$turns.receive(on: RunLoop.main).sink { [weak self] turns in
+    }.store(in: &subscriptions)
+    viewModel.$turns.receive(on: RunLoop.main).sink { [weak self] turns in
       guard !turns.isEmpty else { return }
       self?.updateStateWithTurn(turns[0])
       self?.fillTurnStack(with: turns)
-    }
+    }.store(in: &subscriptions)
+    viewModel.$errorMessage.receive(on: RunLoop.main).sink { [weak self] error in
+      guard let castleError = error else { return }
+      self?.presentErrorMessage(with: castleError)
+    }.store(in: &subscriptions)
   }
   
   func configure() {
@@ -212,6 +213,12 @@ private extension DashboardViewController {
   func presentSelectCastleAlert() {
     let message = state == .waitingForPlayer ? "Select an action before selecting a castle" : "Can't do an action with a castle this turn"
     let alertController = UIAlertController(title: "Select a Castle", message: message, preferredStyle: .alert)
+    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    present(alertController, animated: true, completion: nil)
+  }
+  
+  func presentErrorMessage(with error: ErrorViewModel) {
+    let alertController = UIAlertController(title: error.title, message: error.message, preferredStyle: .alert)
     alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     present(alertController, animated: true, completion: nil)
   }

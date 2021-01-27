@@ -16,7 +16,7 @@ protocol KingdomService {
   func getCurrentGold() -> Int
   func updateCastle(_: Castle)
   func createCastle(withName: String, imageName: String)
-  func modifyGoldWith(quantity: Int)
+  func modifyGoldWith(quantity: Int) throws
 }
 
 final class KingdomServiceAdapter: KingdomService {
@@ -67,7 +67,10 @@ final class KingdomServiceAdapter: KingdomService {
     kingdom.castles.insert(newCastle, at: 0)
   }
   
-  func modifyGoldWith(quantity: Int) {
+  func modifyGoldWith(quantity: Int) throws {
+    if kingdom.gold + quantity < 0 {
+      throw CastlesError.insufficientGold
+    }
     kingdom.gold += quantity
   }
 }
