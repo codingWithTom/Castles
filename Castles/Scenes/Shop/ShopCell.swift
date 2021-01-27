@@ -38,6 +38,7 @@ final class ShopCellCollectionView: ShopCell {
   private var itemImageView = UIImageView()
   private var nameLabel = UILabel()
   private var quantityLabel = UILabel()
+  private var blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
   
   override func updateConfiguration(using state: UICellConfigurationState) {
     if contentView.subviews.isEmpty { configureView() }
@@ -49,6 +50,11 @@ final class ShopCellCollectionView: ShopCell {
     }
     nameLabel.text = viewModel.name
     quantityLabel.text = viewModel.quantity
+    if viewModel.isAvailable {
+      enableCell()
+    } else {
+      disableCell()
+    }
   }
 }
 
@@ -60,6 +66,10 @@ private extension ShopCellCollectionView {
     itemImageView.contentMode = .scaleAspectFit
     itemImageView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     itemImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+    itemImageView.addSubview(blurEffect)
+    blurEffect.frame = itemImageView.bounds
+    itemImageView.addSubview(blurEffect)
+    blurEffect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     nameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     nameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
     nameLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
@@ -86,5 +96,15 @@ private extension ShopCellCollectionView {
       quantityLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
       quantityLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20.0)
     ])
+  }
+  
+  func disableCell() {
+    isUserInteractionEnabled = false
+    blurEffect.isHidden = false
+  }
+  
+  func enableCell() {
+    isUserInteractionEnabled = true
+    blurEffect.isHidden = true
   }
 }

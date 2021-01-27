@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CreateCastle {
-  func execute()
+  func execute() -> Result<Void, CastlesError>
 }
 
 final class CreateCastleAdapter: CreateCastle {
@@ -49,10 +49,15 @@ final class CreateCastleAdapter: CreateCastle {
     self.dependencies = dependencies
   }
   
-  func execute() {
+  func execute() -> Result<Void, CastlesError> {
     let name = castleNames.randomElement() ?? ""
     let imageName = castleImageNames.randomElement() ?? ""
-    dependencies.kingdomService.createCastle(withName: name, imageName: imageName)
-    dependencies.kingdomService.modifyGoldWith(quantity: -Kingdom.newCastlePrice)
+    do {
+      try dependencies.kingdomService.modifyGoldWith(quantity: -Kingdom.newCastlePrice)
+      dependencies.kingdomService.createCastle(withName: name, imageName: imageName)
+      return .success(())
+    } catch {
+      return .failure(error as? CastlesError ?? .unknown)
+    }
   }
 }

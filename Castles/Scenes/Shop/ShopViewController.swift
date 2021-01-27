@@ -12,7 +12,7 @@ final class ShopViewController: UIViewController {
   
   private var collectionView: UICollectionView!
   private var dataSource: UICollectionViewDiffableDataSource<String, ShopItemViewModel>?
-  private var shopItemSubscriber: AnyCancellable?
+  private var subscriptions = Set<AnyCancellable>()
   private var viewModel = ShopViewModel()
   
   override func viewDidLoad() {
@@ -76,9 +76,13 @@ private extension ShopViewController {
   }
   
   func observe() {
-    shopItemSubscriber = viewModel.$items.receive(on: RunLoop.main).sink { [weak self] in
+    viewModel.$items.receive(on: RunLoop.main).sink { [weak self] in
       self?.updateDataSource(with: $0)
-    }
+    }.store(in: &subscriptions)
+    viewModel.$errorMessage.receive(on: RunLoop.main).sink { [weak self] error in
+      guard let castleError = error else { return }
+      self?.presentError(castleError)
+    }.store(in: &subscriptions)
   }
   
   func presentSheet(forItemID itemID: String, inCell cell: UICollectionViewCell) {
@@ -95,5 +99,11 @@ private extension ShopViewController {
     sheetController.popoverPresentationController?.sourceView = cell
     sheetController.popoverPresentationController?.sourceRect = cell.bounds
     present(sheetController, animated: true, completion: nil)
+  }
+  
+  func presentError(_ castleError: ErrorViewModel) {
+    let alertController = UIAlertController(title: castleError.title, message: castleError.message, preferredStyle: .alert)
+    alertController.addAction(UIAlertAction(title: "Continue Shopping", style: .default, handler: nil))
+    present(alertController, animated: true, completion: nil)
   }
 }

@@ -28,10 +28,14 @@ final class PerformPlayerTurnAdapter: PerformPlayerTurn {
   func executeAttack(castleID: String) {
     guard let castle = dependencies.kingdomService.getCastle(withID: castleID) else { return }
     let (castleAfterAttack, loot) = dependencies.outcomeService.attackWithCastle(castle)
-    dependencies.kingdomService.modifyGoldWith(quantity: loot)
-    dependencies.kingdomService.updateCastle(castleAfterAttack)
-    dependencies.shopService.refreshStore()
-    dependencies.turnService.popTurn()
+    do {
+      try dependencies.kingdomService.modifyGoldWith(quantity: loot)
+      dependencies.kingdomService.updateCastle(castleAfterAttack)
+      dependencies.shopService.refreshStore()
+      dependencies.turnService.popTurn()
+    } catch {
+      print("Error attacking")
+    }
   }
   
   func executeFortify(castleID: String) {
