@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 private extension UIConfigurationStateCustomKey {
   static let viewModel = UIConfigurationStateCustomKey(rawValue: "com.codingWithTom.castles.castleCell.viewModel")
@@ -33,6 +34,9 @@ class CastleCell: UICollectionViewCell {
 }
 
 final class CastleCollectionCell: CastleCell {
+  struct Dependencies {
+    var castleEffect: CastleEffect = CastleEffectAdapter()
+  }
   private var castleStackView = UIStackView()
   private var castleImageView = UIImageView()
   private var attackImageView = UIImageView()
@@ -42,6 +46,8 @@ final class CastleCollectionCell: CastleCell {
   private var hpImageView = UIImageView()
   private var hpLabel = UILabel()
   private var nameLabel = UILabel()
+  private var castleScene = SKView()
+  var dependencies: Dependencies = .init()
   
   override func updateConfiguration(using state: UICellConfigurationState) {
     if contentView.subviews.isEmpty { configureView() }
@@ -51,6 +57,7 @@ final class CastleCollectionCell: CastleCell {
     defenseLabel.text = viewModel.defense
     hpLabel.text = viewModel.hp
     castleImageView.image = UIImage(named: viewModel.imageName)
+    addEffect(for: viewModel)
   }
 }
 
@@ -60,6 +67,10 @@ private extension CastleCollectionCell {
     castleStackView.addArrangedSubview(castleImageView)
     castleStackView.addArrangedSubview(nameLabel)
     castleImageView.contentMode = .scaleAspectFit
+    castleImageView.addSubview(castleScene)
+    castleScene.frame = castleImageView.bounds
+    castleScene.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    castleScene.backgroundColor = .clear
     
     nameLabel.font = UIFont.preferredFont(forTextStyle: .title1)
     nameLabel.textAlignment = .center
@@ -112,5 +123,18 @@ private extension CastleCollectionCell {
       hpLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       hpLabel.centerYAnchor.constraint(equalTo: hpImageView.centerYAnchor),
     ])
+  }
+  
+  func addEffect(for viewModel: CastleViewModel) {
+    guard let effect = dependencies.castleEffect.getEffectFor(condition: viewModel.condition) else {
+      castleScene.isHidden = true
+      return
+    }
+    let scene = SKScene(size: castleScene.bounds.size)
+    scene.addChild(effect)
+    scene.backgroundColor = .clear
+    scene.anchorPoint = CGPoint(x: 0.5, y: 0.2)
+    castleScene.isHidden = false
+    castleScene.presentScene(scene)
   }
 }

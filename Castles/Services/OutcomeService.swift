@@ -20,8 +20,8 @@ final class OutcomeServiceAdapter: OutcomeService {
   private let defenseDecreasePercentage = 0.5
   private let hpDamageDecrease = 0.6
   private let minAttackLost = 0.3
-  private let lootMultiplier = 10
-  private let minLootPercent = 0.6
+  private let lootMultiplier = 25
+  private let lootPercent = 0.6
   private let fortifyHPRecovery = 50
   private let fortifyDefenseRecoveryRange = (50 ... 90)
   private let fortifyAttackRecoveryRange = (30 ... 60)
@@ -48,7 +48,7 @@ final class OutcomeServiceAdapter: OutcomeService {
     let attackLost = Int.random(in: lowerAttackRange ... attackingCastle.attackPower)
     attackingCastle.attackPower -= attackLost
     let maxLoot = attackingCastle.attackPower * lootMultiplier
-    let loot = Int(Double(maxLoot) * Double.random(in: minLootPercent ... 1.0))
+    let loot = Int(Double(maxLoot) * lootPercent)
     let outcome = Outcome.attack(castle: attackingCastle, attackDecrease: attackLost, loot: loot)
     broadcast(outcome: outcome)
     return (castle: attackingCastle, goldIncrease: loot)
