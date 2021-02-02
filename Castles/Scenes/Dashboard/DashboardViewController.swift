@@ -25,12 +25,19 @@ struct ActionViewModel: Hashable {
 }
 
 struct CastleViewModel: Hashable {
+  enum Condition: Int {
+    case perfect
+    case normal
+    case onFire
+  }
+  
   let id: String
   let name: String
   let imageName: String
   let attack: String
   let defense: String
   let hp: String
+  let condition: Condition
 }
 
 struct TurnViewModel {

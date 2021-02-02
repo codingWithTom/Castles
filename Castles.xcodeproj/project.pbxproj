@@ -24,6 +24,11 @@
 		405907B9259E3EF200B98AB4 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405907B8259E3EF200B98AB4 /* ShopItem.swift */; };
 		405907BC259E3FF600B98AB4 /* UseCastleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405907BB259E3FF600B98AB4 /* UseCastleItem.swift */; };
 		405907BF259E405300B98AB4 /* PurchaseShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405907BE259E405300B98AB4 /* PurchaseShopItem.swift */; };
+		4069D1E825C6F57900375502 /* CastleFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4069D1E625C6F57900375502 /* CastleFire.sks */; };
+		4069D1E925C6F57900375502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4069D1E725C6F57900375502 /* Assets.xcassets */; };
+		4069D1ED25C6F69F00375502 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4069D1EC25C6F69F00375502 /* SpriteKit.framework */; };
+		4069D1F025C6F6BE00375502 /* CastleEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4069D1EF25C6F6BE00375502 /* CastleEffect.swift */; };
+		4069D1F325C6FBEA00375502 /* SparklingCastle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4069D1F225C6FBEA00375502 /* SparklingCastle.sks */; };
 		406C0E9B25AE912400C05870 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0E9A25AE912400C05870 /* ShopViewModel.swift */; };
 		406C0E9F25AE915700C05870 /* GetShopItemPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0E9E25AE915700C05870 /* GetShopItemPublisher.swift */; };
 		406C0EA225AE926400C05870 /* CastleItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0EA125AE926400C05870 /* CastleItemPresenter.swift */; };
@@ -70,6 +75,11 @@
 		405907B8259E3EF200B98AB4 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
 		405907BB259E3FF600B98AB4 /* UseCastleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCastleItem.swift; sourceTree = "<group>"; };
 		405907BE259E405300B98AB4 /* PurchaseShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseShopItem.swift; sourceTree = "<group>"; };
+		4069D1E625C6F57900375502 /* CastleFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CastleFire.sks; sourceTree = "<group>"; };
+		4069D1E725C6F57900375502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4069D1EC25C6F69F00375502 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		4069D1EF25C6F6BE00375502 /* CastleEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleEffect.swift; sourceTree = "<group>"; };
+		4069D1F225C6FBEA00375502 /* SparklingCastle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SparklingCastle.sks; sourceTree = "<group>"; };
 		406C0E9A25AE912400C05870 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		406C0E9E25AE915700C05870 /* GetShopItemPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetShopItemPublisher.swift; sourceTree = "<group>"; };
 		406C0EA125AE926400C05870 /* CastleItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleItemPresenter.swift; sourceTree = "<group>"; };
@@ -105,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4069D1ED25C6F69F00375502 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +162,32 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		4069D1E525C6F55A00375502 /* ParticleEmitters */ = {
+			isa = PBXGroup;
+			children = (
+				4069D1E625C6F57900375502 /* CastleFire.sks */,
+				4069D1E725C6F57900375502 /* Assets.xcassets */,
+				4069D1F225C6FBEA00375502 /* SparklingCastle.sks */,
+			);
+			path = ParticleEmitters;
+			sourceTree = "<group>";
+		};
+		4069D1EB25C6F69F00375502 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4069D1EC25C6F69F00375502 /* SpriteKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4069D1EE25C6F6AE00375502 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4069D1EF25C6F6BE00375502 /* CastleEffect.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		406C0E9925AE911A00C05870 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +203,7 @@
 			children = (
 				409D52EF259A30A2002C1509 /* Castles */,
 				409D52EE259A30A2002C1509 /* Products */,
+				4069D1EB25C6F69F00375502 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +218,7 @@
 		409D52EF259A30A2002C1509 /* Castles */ = {
 			isa = PBXGroup;
 			children = (
+				4069D1EE25C6F6AE00375502 /* Presentation */,
 				40AC13D625A007AD00CB81E7 /* Presenter */,
 				409D5306259A30E7002C1509 /* Model */,
 				409D5311259A33E1002C1509 /* Services */,
@@ -189,6 +228,7 @@
 				409D52F2259A30A2002C1509 /* SceneDelegate.swift */,
 				409D52F6259A30A2002C1509 /* Main.storyboard */,
 				409D52F9259A30A2002C1509 /* Assets.xcassets */,
+				4069D1E525C6F55A00375502 /* ParticleEmitters */,
 				409D52FB259A30A2002C1509 /* LaunchScreen.storyboard */,
 				409D52FE259A30A2002C1509 /* Info.plist */,
 			);
@@ -302,6 +342,9 @@
 				409D52FD259A30A2002C1509 /* LaunchScreen.storyboard in Resources */,
 				409D52FA259A30A2002C1509 /* Assets.xcassets in Resources */,
 				409D52F8259A30A2002C1509 /* Main.storyboard in Resources */,
+				4069D1E825C6F57900375502 /* CastleFire.sks in Resources */,
+				4069D1E925C6F57900375502 /* Assets.xcassets in Resources */,
+				4069D1F325C6FBEA00375502 /* SparklingCastle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +365,7 @@
 				406C0EAF25AE99F700C05870 /* ShopCell.swift in Sources */,
 				40AC13D825A007B600CB81E7 /* CastlePresenter.swift in Sources */,
 				406C0E9F25AE915700C05870 /* GetShopItemPublisher.swift in Sources */,
+				4069D1F025C6F6BE00375502 /* CastleEffect.swift in Sources */,
 				405907A5259E3B2A00B98AB4 /* GetGoldPublisher.swift in Sources */,
 				405907BF259E405300B98AB4 /* PurchaseShopItem.swift in Sources */,
 				409D5313259A3417002C1509 /* KingdomService.swift in Sources */,
