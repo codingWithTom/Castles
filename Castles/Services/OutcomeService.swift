@@ -13,6 +13,7 @@ protocol OutcomeService {
   func plunderCastle(_: Castle) -> Castle
   func attackWithCastle(_: Castle) -> (castle: Castle, goldIncrease: Int)
   func fortifyCastle(_: Castle) -> Castle
+  func applyPerkOutcome(_: Outcome)
 }
 
 final class OutcomeServiceAdapter: OutcomeService {
@@ -66,6 +67,10 @@ final class OutcomeServiceAdapter: OutcomeService {
     let outcome = Outcome.fortify(castle: fortifiedCastle, defenseIncrease: defenseIncrease, attackIncrease: attackIncrease, hpIncrease: hpIncrease)
     broadcast(outcome: outcome)
     return fortifiedCastle
+  }
+  
+  func applyPerkOutcome(_ outcome: Outcome) {
+    broadcast(outcome: outcome)
   }
 }
 
