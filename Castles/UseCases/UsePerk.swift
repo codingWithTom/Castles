@@ -48,6 +48,6 @@ private extension UsePerkAdapter {
     guard var castle = dependencies.kingdomService.getCastles().randomElement() else { return }
     castle.attackPower += perk.valueAdded
     dependencies.kingdomService.updateCastle(castle)
-    dependencies.outcomeService.applyPerkOutcome(.attackPekUsed(castle: castle, attackIncrease: perk.valueAdded))
+    dependencies.outcomeService.applyPerkOutcome(.attackPerkUsed(castle: castle, attackIncrease: perk.valueAdded))
   }
 }

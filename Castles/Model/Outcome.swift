@@ -12,6 +12,6 @@ enum Outcome {
   case plunder(castle: Castle, defenseDecrease: Int, hpDecrease: Int, isCastleDestroyed: Bool)
   case attack(castle: Castle, attackDecrease: Int, loot: Int)
   case goldPerkUsed(goldIncrease: Int)
-  case attackPekUsed(castle: Castle, attackIncrease: Int)
+  case attackPerkUsed(castle: Castle, attackIncrease: Int)
 }
 

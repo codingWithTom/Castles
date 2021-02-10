@@ -17,27 +17,31 @@ final class DashboardViewModel {
     var createCastle: CreateCastle = CreateCastleAdapter()
     var performPlayerTurn: PerformPlayerTurn = PerformPlayerTurnAdapter()
     var performBarbarianTurn: PerformBarbarianTurn = PerformBarbarianTurnAdapter()
+    var getPerksPublisher: GetPerksPublisher = GetPerksPublisherAdapter()
+    var usePerk: UsePerk = UsePerkAdapter()
   }
   private let dependencies: Dependencies
   @Published var goldAmount: String = "0"
   @Published var castles: [CastleViewModel] = []
+  @Published var actions: [ActionViewModel] = []
   @Published var outcome: Outcome?
   @Published var turns: [TurnViewModel] = []
   @Published var errorMessage: ErrorViewModel?
-  private var goldSubscriber: AnyCancellable?
-  private var castlesSubscriber: AnyCancellable?
-  private var turnSubscriber: AnyCancellable?
-  private var outcomeSubscirber: AnyCancellable?
+  private var perks: [Perk] = []
+  private var subscriptions = Set<AnyCancellable>()
   
   init(dependencies: Dependencies = .init()) {
     self.dependencies = dependencies
     observe()
   }
   
-  func userDidTapAddCastle() {
-    let outcome = dependencies.createCastle.execute()
-    if case let .failure(error) = outcome {
-      errorMessage = ErrorPresenter.viewModel(from: error)
+  
+  func userSelectedAction(withIndex index: Int) {
+    if index == 0 {
+      userDidTapAddCastle()
+    } else {
+      let perk = perks[index - 1]
+      dependencies.usePerk.execute(perk: perk)
     }
   }
   
@@ -56,18 +60,32 @@ final class DashboardViewModel {
 
 private extension DashboardViewModel {
   func observe() {
-    goldSubscriber = dependencies.getGoldPublisher.execute().sink { [weak self] in
+    dependencies.getGoldPublisher.execute().sink { [weak self] in
       self?.goldAmount = CurrencyPresenter.goldString($0)
-    }
-    castlesSubscriber = dependencies.getCastlePublisher.execute().sink { [weak self] castles in
+    }.store(in: &subscriptions)
+    dependencies.getCastlePublisher.execute().sink { [weak self] castles in
       self?.castles = castles.map { CastlePresenter.castleViewModel(from: $0) }
-    }
-    turnSubscriber = dependencies.getTurnPublisher.execute().sink { [weak self] turns in
+    }.store(in: &subscriptions)
+    dependencies.getTurnPublisher.execute().sink { [weak self] turns in
       self?.turns = turns.map { TurnPresenter.turnViewModel(from: $0) }
-    }
-    outcomeSubscirber = dependencies.getOutcomePublisher.execute().sink { [weak self] in
+    }.store(in: &subscriptions)
+    dependencies.getOutcomePublisher.execute().sink { [weak self] in
       self?.outcome = $0
-      
+    }.store(in: &subscriptions)
+    dependencies.getPerksPublisher.execute().sink { [weak self] in
+      self?.perks = $0
+      let addCastleAction = ActionViewModel(id: "Add Castle Cell", value: "-1,000", name: "Add Castle", imageName: "plus.circle",
+                                            isImageIcon: true, valueImageName: "gold", startDate: nil, endDate: nil)
+      self?.actions = [addCastleAction] +
+        $0.map { perk in PerkPresenter.viewModel(for: perk) }
+        
+    }.store(in: &subscriptions)
+  }
+  
+  func userDidTapAddCastle() {
+    let outcome = dependencies.createCastle.execute()
+    if case let .failure(error) = outcome {
+      errorMessage = ErrorPresenter.viewModel(from: error)
     }
   }
 }
