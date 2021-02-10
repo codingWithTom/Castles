@@ -19,9 +19,14 @@ enum DashboardItem: Hashable {
 }
 
 struct ActionViewModel: Hashable {
-  let price: String
+  let id: String
+  let value: String
   let name: String
   let imageName: String
+  let isImageIcon: Bool
+  let valueImageName: String
+  let startDate: Date?
+  let endDate: Date?
 }
 
 struct CastleViewModel: Hashable {
@@ -101,7 +106,7 @@ final class DashboardViewController: UIViewController {
 extension DashboardViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if case .action = dataSource?.itemIdentifier(for: indexPath) {
-      viewModel.userDidTapAddCastle()
+      viewModel.userSelectedAction(withIndex: indexPath.row)
     } else if case let .castle(castleViewModel) = dataSource?.itemIdentifier(for: indexPath) {
       let castleID = castleViewModel.id
       if state == .attacking {
@@ -122,6 +127,9 @@ private extension DashboardViewController {
     }.store(in: &subscriptions)
     viewModel.$castles.receive(on: RunLoop.main).sink { [weak self] in
       self?.updateCastlesWith(viewModels: $0)
+    }.store(in: &subscriptions)
+    viewModel.$actions.receive(on: RunLoop.main).sink { [weak self] in
+      self?.updateActionsWith(actionViewModels: $0)
     }.store(in: &subscriptions)
     viewModel.$outcome.receive(on: RunLoop.main).sink { [weak self] in
       guard
@@ -206,15 +214,18 @@ private extension DashboardViewController {
       }
     }
     dataSource?.apply(NSDiffableDataSourceSectionSnapshot<DashboardItem>(), to: .castles)
-    var addCastleSectionSnapshot = NSDiffableDataSourceSectionSnapshot<DashboardItem>()
-    addCastleSectionSnapshot.append([DashboardItem.action(ActionViewModel(price: "1,000", name: "Add Castle", imageName: "plus.circle"))])
-    dataSource?.apply(addCastleSectionSnapshot, to: .actions)
   }
   
   func updateCastlesWith(viewModels: [CastleViewModel]) {
     var addCastleSectionSnapshot = NSDiffableDataSourceSectionSnapshot<DashboardItem>()
     addCastleSectionSnapshot.append(viewModels.map { DashboardItem.castle($0) })
     dataSource?.apply(addCastleSectionSnapshot, to: .castles)
+  }
+  
+  func updateActionsWith(actionViewModels: [ActionViewModel]) {
+    var addCastleSectionSnapshot = NSDiffableDataSourceSectionSnapshot<DashboardItem>()
+    addCastleSectionSnapshot.append(actionViewModels.map { DashboardItem.action($0) })
+    dataSource?.apply(addCastleSectionSnapshot, to: .actions)
   }
   
   func presentSelectCastleAlert() {

@@ -26,6 +26,10 @@ final class OutcomeViewModel {
       return "Loot Obtained"
     case .fortify:
       return "Castle Fortified"
+    case .attackPerkUsed:
+      return "Used Smith Perk"
+    case .goldPerkUsed:
+      return "Harvest Collected!"
     }
   }
   
@@ -41,6 +45,10 @@ final class OutcomeViewModel {
       return fortifyEntries(castle: castle, defenseIncrease: defenseIncrease, attackIncrease: attackIncrease, hpIncrease: hpIncrease)
     case let .plunder(castle: castle, defenseDecrease: defenseDecrease, hpDecrease: hpDecrease, isCastleDestroyed: isCastleDestroyed):
       return plunderEntries(castle: castle, defenseDecrease: defenseDecrease, hpDecrease: hpDecrease, isCastleDestroyed: isCastleDestroyed)
+    case let .attackPerkUsed(castle: castle, attackIncrease: attackIncrease):
+      return attackPerkEntries(castle: castle, attackIncrease: attackIncrease)
+    case let .goldPerkUsed(goldIncrease: goldIncrease):
+      return harvestPerkEntries(goldIncrease: goldIncrease)
     }
   }
 }
@@ -72,6 +80,19 @@ private extension OutcomeViewModel {
       .affectedCastle(imageName: castle.imageName, name: "\(castle.name) collected loot!"),
       .attackChange(value: "- \(attackDecrease)"),
       .loot(value: "\(loot)")
+    ]
+  }
+  
+  func attackPerkEntries(castle: Castle, attackIncrease: Int) -> [OutcomeEntryType] {
+    return [
+      .affectedCastle(imageName: castle.imageName, name: "\(castle.name) attack increased"),
+      .attackChange(value: "+ \(attackIncrease)")
+    ]
+  }
+  
+  func harvestPerkEntries(goldIncrease: Int) -> [OutcomeEntryType] {
+    return [
+      .loot(value: "Earned \(goldIncrease) from this harvest!")
     ]
   }
 }
