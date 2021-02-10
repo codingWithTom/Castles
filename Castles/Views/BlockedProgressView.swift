@@ -23,7 +23,7 @@ final class BlockedProgressView: UIView {
   
   func setupProgressWith(startDate: Date, endDate: Date, onCompletion: @escaping () -> Void) {
     timer?.invalidate()
-    let timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
+    let timer = Timer(timeInterval: 0.5, repeats: true) { [weak self] _ in
       guard endDate.timeIntervalSinceNow > 0 else {
         onCompletion()
         self?.isHidden = true
@@ -34,7 +34,7 @@ final class BlockedProgressView: UIView {
       let progress = Date().timeIntervalSince(startDate)
       self?.progressView.progress = CGFloat(progress / total)
     }
-    
+    RunLoop.current.add(timer, forMode: .common)
     self.timer = timer
     isHidden = false
   }

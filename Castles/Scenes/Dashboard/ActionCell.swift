@@ -42,6 +42,11 @@ final class ActionCollectionCell: ActionCell {
   private var blockProgressView = BlockedProgressView()
   private var lastActionCheckedProgressFor: String?
   
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    lastActionCheckedProgressFor = nil
+  }
+  
   override func updateConfiguration(using state: UICellConfigurationState) {
     if contentView.subviews.isEmpty { configureView() }
     guard let viewModel = state.viewModel else { return }
@@ -49,8 +54,10 @@ final class ActionCollectionCell: ActionCell {
     actionImageView.image = viewModel.isImageIcon ? UIImage(systemName: viewModel.imageName) : UIImage(named: viewModel.imageName)
     priceLabel.text = viewModel.value
     priceImageView.image = UIImage(named: viewModel.valueImageName)
-    if let startDate = viewModel.startDate, let endDate = viewModel.endDate, lastActionCheckedProgressFor == nil {
-      lastActionCheckedProgressFor = viewModel.id
+    
+    guard lastActionCheckedProgressFor == nil else { return }
+    lastActionCheckedProgressFor = viewModel.id
+    if let startDate = viewModel.startDate, let endDate = viewModel.endDate, endDate.timeIntervalSinceNow > 0 {
       isUserInteractionEnabled = false
       blockProgressView.setupProgressWith(startDate: startDate, endDate: endDate) { [weak self] in
         self?.isUserInteractionEnabled = true
@@ -65,10 +72,14 @@ final class ActionCollectionCell: ActionCell {
 private extension ActionCollectionCell {
   func configureView() {
     actionImageView.contentMode = .scaleAspectFit
+    actionImageView.setContentHuggingPriority(.defaultLow, for: .vertical)
+    actionImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     contentView.addSubview(stackView)
     stackView.axis = .vertical
     stackView.addArrangedSubview(actionImageView)
     titleLabel.textAlignment = .center
+    titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
     stackView.addArrangedSubview(titleLabel)
     priceImageView.image = UIImage(named: "gold")
     priceImageView.contentMode = .scaleAspectFit
