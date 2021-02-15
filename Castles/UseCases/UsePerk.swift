@@ -16,6 +16,7 @@ final class UsePerkAdapter: UsePerk {
     var perkService: PerkService = PerkServiceAdapter.shared
     var kingdomService: KingdomService = KingdomServiceAdapter.shared
     var outcomeService: OutcomeService = OutcomeServiceAdapter.shared
+    var schedulePerkNotification: SchedulePerkNotification = SchedulePerkNotificationAdapter()
   }
   private let dependencies: Dependencies
   
@@ -31,6 +32,7 @@ final class UsePerkAdapter: UsePerk {
     case .attack:
       useAttackPerk(perk)
     }
+    dependencies.schedulePerkNotification.execute(perk: perk)
   }
 }
 

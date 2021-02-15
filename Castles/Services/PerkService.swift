@@ -11,6 +11,7 @@ import Combine
 protocol PerkService {
   var perkPublisher: AnyPublisher<[Perk], Never> { get }
   func use(perk: Perk)
+  func getPerks() -> [Perk]
 }
 
 final class PerkServiceAdapter: PerkService {
@@ -41,6 +42,10 @@ final class PerkServiceAdapter: PerkService {
     newPerk.lastUsedDate = Date()
     perks[perkIndex] = newPerk
   }
+  
+  func getPerks() -> [Perk] {
+    return perks
+  }
 }
 
 private extension PerkServiceAdapter {
@@ -49,7 +54,7 @@ private extension PerkServiceAdapter {
       self.perks = perks
     } else {
       self.perks = [
-        Perk(name: "Harvest", imageName: "plant", valueAdded: 300, type: .gold, cooldownTime: 20, lastUsedDate: Date()),
+        Perk(name: "Harvest", imageName: "plant", valueAdded: 300, type: .gold, cooldownTime: 5, lastUsedDate: Date()),
         Perk(name: "Smith", imageName: "anvil", valueAdded: 20, type: .attack, cooldownTime: 60, lastUsedDate: Date())
       ]
     }
