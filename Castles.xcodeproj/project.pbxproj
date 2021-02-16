@@ -57,6 +57,10 @@
 		40AFDCE125D02FCE007C5109 /* PerkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFDCE025D02FCE007C5109 /* PerkService.swift */; };
 		40AFDCE825D0331A007C5109 /* UsePerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFDCE725D0331A007C5109 /* UsePerk.swift */; };
 		40AFDCEF25D03455007C5109 /* GetPerksPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFDCEE25D03455007C5109 /* GetPerksPublisher.swift */; };
+		40B511EB25D9765C0005397E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B511EA25D9765C0005397E /* NotificationService.swift */; };
+		40B511EE25D97A1C0005397E /* SchedulePerkNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B511ED25D97A1C0005397E /* SchedulePerkNotification.swift */; };
+		40B511F225D97F5C0005397E /* GetPerkNotificationActionPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B511F125D97F5C0005397E /* GetPerkNotificationActionPublisher.swift */; };
+		40B511F525D97FCB0005397E /* SyncPerkNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */; };
 		40B9A26825D22BBD00B30B47 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9A26725D22BBD00B30B47 /* ProgressView.swift */; };
 		40B9A26C25D22C9E00B30B47 /* BlockedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */; };
 		40E2A47C25A67CB700052CDE /* OutcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2A47B25A67CB700052CDE /* OutcomeViewModel.swift */; };
@@ -117,6 +121,10 @@
 		40AFDCE025D02FCE007C5109 /* PerkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerkService.swift; sourceTree = "<group>"; };
 		40AFDCE725D0331A007C5109 /* UsePerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsePerk.swift; sourceTree = "<group>"; };
 		40AFDCEE25D03455007C5109 /* GetPerksPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPerksPublisher.swift; sourceTree = "<group>"; };
+		40B511EA25D9765C0005397E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		40B511ED25D97A1C0005397E /* SchedulePerkNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePerkNotification.swift; sourceTree = "<group>"; };
+		40B511F125D97F5C0005397E /* GetPerkNotificationActionPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPerkNotificationActionPublisher.swift; sourceTree = "<group>"; };
+		40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPerkNotifications.swift; sourceTree = "<group>"; };
 		40B9A26725D22BBD00B30B47 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedProgressView.swift; sourceTree = "<group>"; };
 		40E2A47B25A67CB700052CDE /* OutcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeViewModel.swift; sourceTree = "<group>"; };
@@ -166,12 +174,15 @@
 				405907A4259E3B2A00B98AB4 /* GetGoldPublisher.swift */,
 				405907A7259E3C2A00B98AB4 /* GetOutcomePublisher.swift */,
 				40AFDCEE25D03455007C5109 /* GetPerksPublisher.swift */,
+				40B511F125D97F5C0005397E /* GetPerkNotificationActionPublisher.swift */,
 				406C0E9E25AE915700C05870 /* GetShopItemPublisher.swift */,
 				40AC13D125A0031A00CB81E7 /* GetTurnPublisher.swift */,
 				405907AE259E3D6C00B98AB4 /* MoveToNextTurn.swift */,
 				405907AB259E3C7800B98AB4 /* PerformBarbarianTurn.swift */,
 				4059079D259E39A600B98AB4 /* PerformPlayerTurn.swift */,
 				405907BE259E405300B98AB4 /* PurchaseShopItem.swift */,
+				40B511ED25D97A1C0005397E /* SchedulePerkNotification.swift */,
+				40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */,
 				405907BB259E3FF600B98AB4 /* UseCastleItem.swift */,
 				40AFDCE725D0331A007C5109 /* UsePerk.swift */,
 			);
@@ -275,6 +286,7 @@
 				405907B4259E3EEA00B98AB4 /* ShopService.swift */,
 				408E147C25C0FC0700E2E26D /* CastlesError.swift */,
 				40AFDCE025D02FCE007C5109 /* PerkService.swift */,
+				40B511EA25D9765C0005397E /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -387,6 +399,7 @@
 				405907AF259E3D6C00B98AB4 /* MoveToNextTurn.swift in Sources */,
 				40098CD7259FFD8700407120 /* DashboardViewController.swift in Sources */,
 				406C0EA925AE96D800C05870 /* GetCastles.swift in Sources */,
+				40B511F525D97FCB0005397E /* SyncPerkNotifications.swift in Sources */,
 				405907B5259E3EEA00B98AB4 /* ShopService.swift in Sources */,
 				40AC13DF25A008EE00CB81E7 /* CurrencyPresenter.swift in Sources */,
 				40AFDCDE25D02F3D007C5109 /* Perk.swift in Sources */,
@@ -407,6 +420,7 @@
 				40B9A26825D22BBD00B30B47 /* ProgressView.swift in Sources */,
 				402A1BF125A2C896005A3046 /* CastleCell.swift in Sources */,
 				403309B125D229A100C91C27 /* PerkPresenter.swift in Sources */,
+				40B511EB25D9765C0005397E /* NotificationService.swift in Sources */,
 				405907BC259E3FF600B98AB4 /* UseCastleItem.swift in Sources */,
 				409D52F1259A30A2002C1509 /* AppDelegate.swift in Sources */,
 				406C0EA625AE950100C05870 /* ShopItemPresenter.swift in Sources */,
@@ -415,6 +429,7 @@
 				4059079E259E39A600B98AB4 /* PerformPlayerTurn.swift in Sources */,
 				40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */,
 				40AFDCE125D02FCE007C5109 /* PerkService.swift in Sources */,
+				40B511F225D97F5C0005397E /* GetPerkNotificationActionPublisher.swift in Sources */,
 				406C0E9B25AE912400C05870 /* ShopViewModel.swift in Sources */,
 				40AC13CF25A0023300CB81E7 /* DashboardViewModel.swift in Sources */,
 				40FBBA3A25A556370019BD72 /* TurnPresenter.swift in Sources */,
@@ -430,6 +445,7 @@
 				409D52F3259A30A2002C1509 /* SceneDelegate.swift in Sources */,
 				40AFDCEF25D03455007C5109 /* GetPerksPublisher.swift in Sources */,
 				409D530C259A314A002C1509 /* Castle.swift in Sources */,
+				40B511EE25D97A1C0005397E /* SchedulePerkNotification.swift in Sources */,
 				406C0EA225AE926400C05870 /* CastleItemPresenter.swift in Sources */,
 				406C0EAC25AE978B00C05870 /* ShopViewController.swift in Sources */,
 			);
