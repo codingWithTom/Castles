@@ -10,6 +10,7 @@
 		40098CD7259FFD8700407120 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40098CD6259FFD8700407120 /* DashboardViewController.swift */; };
 		402A1BF125A2C896005A3046 /* CastleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A1BF025A2C896005A3046 /* CastleCell.swift */; };
 		403309B125D229A100C91C27 /* PerkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403309B025D229A100C91C27 /* PerkPresenter.swift */; };
+		4041F12C25E499D0004A982F /* SlideInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F12B25E499D0004A982F /* SlideInViewController.swift */; };
 		40436DBB25AA112500B24B4A /* CastleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40436DBA25AA112500B24B4A /* CastleItem.swift */; };
 		40590794259E2A3E00B98AB4 /* TurnService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40590793259E2A3E00B98AB4 /* TurnService.swift */; };
 		40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40590796259E2F5100B98AB4 /* OutcomeService.swift */; };
@@ -72,6 +73,7 @@
 		40098CD6259FFD8700407120 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		402A1BF025A2C896005A3046 /* CastleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleCell.swift; sourceTree = "<group>"; };
 		403309B025D229A100C91C27 /* PerkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerkPresenter.swift; sourceTree = "<group>"; };
+		4041F12B25E499D0004A982F /* SlideInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInViewController.swift; sourceTree = "<group>"; };
 		40436DBA25AA112500B24B4A /* CastleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleItem.swift; sourceTree = "<group>"; };
 		40590793259E2A3E00B98AB4 /* TurnService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnService.swift; sourceTree = "<group>"; };
 		40590796259E2F5100B98AB4 /* OutcomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeService.swift; sourceTree = "<group>"; };
@@ -163,6 +165,15 @@
 				402A1BF025A2C896005A3046 /* CastleCell.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		4041F12625E4974F004A982F /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				40B9A26725D22BBD00B30B47 /* ProgressView.swift */,
+				40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */,
+			);
+			path = Progress;
 			sourceTree = "<group>";
 		};
 		4059079C259E399300B98AB4 /* UseCases */ = {
@@ -308,8 +319,8 @@
 		40B9A26625D22BAF00B30B47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				40B9A26725D22BBD00B30B47 /* ProgressView.swift */,
-				40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */,
+				4041F12625E4974F004A982F /* Progress */,
+				4041F12B25E499D0004A982F /* SlideInViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,6 +439,7 @@
 				40590794259E2A3E00B98AB4 /* TurnService.swift in Sources */,
 				4059079E259E39A600B98AB4 /* PerformPlayerTurn.swift in Sources */,
 				40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */,
+				4041F12C25E499D0004A982F /* SlideInViewController.swift in Sources */,
 				40AFDCE125D02FCE007C5109 /* PerkService.swift in Sources */,
 				40B511F225D97F5C0005397E /* GetPerkNotificationActionPublisher.swift in Sources */,
 				406C0E9B25AE912400C05870 /* ShopViewModel.swift in Sources */,
