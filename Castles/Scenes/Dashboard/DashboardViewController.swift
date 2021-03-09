@@ -79,6 +79,8 @@ final class DashboardViewController: UIViewController {
       updateUI()
     }
   }
+  private let profileControllerID = "ProfileController"
+  private var slideInController: SlideInViewController { SlideInViewController() }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -100,6 +102,11 @@ final class DashboardViewController: UIViewController {
   
   @IBAction private func didTapFortify(sender: Any?) {
     state = .fortifying
+  }
+  
+  @IBAction func tappedProfile(_ sender: Any) {
+    guard let controller = storyboard?.instantiateViewController(identifier: profileControllerID) else { return }
+    slideInController.slideIn(viewController: controller, in: self)
   }
 }
 
