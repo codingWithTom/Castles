@@ -9,13 +9,15 @@ import SwiftUI
 
 @main
 struct CastlesApp: App {
-    @SceneBuilder var body: some Scene {
-        WindowGroup {
-            NavigationView {
-              DashboardView(viewModel: DashboardViewModel())
-            }
-        }
-
-        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+  @StateObject var viewModel = CastlesAppViewModel()
+  
+  @SceneBuilder var body: some Scene {
+    WindowGroup {
+      NavigationView {
+        DashboardView(viewModel: DashboardViewModel())
+      }
     }
+    
+    WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+  }
 }

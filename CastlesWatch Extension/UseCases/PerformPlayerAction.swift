@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WatchConnectivity
 
 protocol PerformPlayerAction {
   func executeAttack(castleID: String)
@@ -15,10 +16,18 @@ protocol PerformPlayerAction {
 final class PerformPlayerActionAdapter: PerformPlayerAction {
   
   func executeAttack(castleID: String) {
-    print("Attacking with \(castleID)")
+    sendAction(.attack, for: castleID)
   }
   
   func executeFortify(castleID: String) {
-    print("Fortifying with \(castleID)")
+    sendAction(.fortify, for: castleID)
+  }
+}
+
+private extension PerformPlayerActionAdapter {
+  func sendAction(_ action: WatchConnectivityConstants.PlayerAction, for castleID: String) {
+    guard WCSession.default.isReachable else { return }
+    let message: [String: Any] = [WatchConnectivityConstants.action: action.rawValue, WatchConnectivityConstants.castleID: castleID]
+    WCSession.default.sendMessage(message, replyHandler: nil, errorHandler: nil)
   }
 }

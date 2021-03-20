@@ -79,6 +79,12 @@
 		40B511F525D97FCB0005397E /* SyncPerkNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */; };
 		40B9A26825D22BBD00B30B47 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9A26725D22BBD00B30B47 /* ProgressView.swift */; };
 		40B9A26C25D22C9E00B30B47 /* BlockedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */; };
+		40BC92F226063A2500B544B3 /* WatchConnectivityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */; };
+		40BC92F926063A2A00B544B3 /* WatchConnectivityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */; };
+		40BC92FE26063ACD00B544B3 /* StartWatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC92FD26063ACD00B544B3 /* StartWatchSession.swift */; };
+		40BC930B26063CF000B544B3 /* SyncWatchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC930A26063CF000B544B3 /* SyncWatchContext.swift */; };
+		40BC931026063EFF00B544B3 /* StartPhoneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC930F26063EFF00B544B3 /* StartPhoneSession.swift */; };
+		40BC93152606408300B544B3 /* CastlesAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC93142606408300B544B3 /* CastlesAppViewModel.swift */; };
 		40BFF93325FEF1890031C41C /* PerformPlayerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFF93225FEF1890031C41C /* PerformPlayerAction.swift */; };
 		40BFF93825FEF1D00031C41C /* GetCastlesPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFF93725FEF1D00031C41C /* GetCastlesPublisher.swift */; };
 		40BFF93D25FEF28D0031C41C /* GetGoldPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFF93C25FEF28D0031C41C /* GetGoldPublisher.swift */; };
@@ -204,6 +210,11 @@
 		40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPerkNotifications.swift; sourceTree = "<group>"; };
 		40B9A26725D22BBD00B30B47 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedProgressView.swift; sourceTree = "<group>"; };
+		40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityConstants.swift; sourceTree = "<group>"; };
+		40BC92FD26063ACD00B544B3 /* StartWatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWatchSession.swift; sourceTree = "<group>"; };
+		40BC930A26063CF000B544B3 /* SyncWatchContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncWatchContext.swift; sourceTree = "<group>"; };
+		40BC930F26063EFF00B544B3 /* StartPhoneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPhoneSession.swift; sourceTree = "<group>"; };
+		40BC93142606408300B544B3 /* CastlesAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastlesAppViewModel.swift; sourceTree = "<group>"; };
 		40BFF93225FEF1890031C41C /* PerformPlayerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformPlayerAction.swift; sourceTree = "<group>"; };
 		40BFF93725FEF1D00031C41C /* GetCastlesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCastlesPublisher.swift; sourceTree = "<group>"; };
 		40BFF93C25FEF28D0031C41C /* GetGoldPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoldPublisher.swift; sourceTree = "<group>"; };
@@ -289,6 +300,8 @@
 				40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */,
 				405907BB259E3FF600B98AB4 /* UseCastleItem.swift */,
 				40AFDCE725D0331A007C5109 /* UsePerk.swift */,
+				40BC92FD26063ACD00B544B3 /* StartWatchSession.swift */,
+				40BC930A26063CF000B544B3 /* SyncWatchContext.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -345,6 +358,7 @@
 				409CF6C325FD12640085B44E /* UseCases */,
 				409CF6C225FD12520085B44E /* Scenes */,
 				409CF68C25FD0E5B0085B44E /* CastlesApp.swift */,
+				40BC93142606408300B544B3 /* CastlesAppViewModel.swift */,
 				409CF69025FD0E5B0085B44E /* NotificationController.swift */,
 				409CF69225FD0E5B0085B44E /* NotificationView.swift */,
 				409CF69425FD0E5B0085B44E /* ComplicationController.swift */,
@@ -387,6 +401,7 @@
 				40BFF93225FEF1890031C41C /* PerformPlayerAction.swift */,
 				40BFF93725FEF1D00031C41C /* GetCastlesPublisher.swift */,
 				40BFF93C25FEF28D0031C41C /* GetGoldPublisher.swift */,
+				40BC930F26063EFF00B544B3 /* StartPhoneSession.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -394,6 +409,7 @@
 		409D52E4259A30A2002C1509 = {
 			isa = PBXGroup;
 			children = (
+				40BC92F026063A1800B544B3 /* Shared */,
 				409D52EF259A30A2002C1509 /* Castles */,
 				409CF67F25FD0E590085B44E /* CastlesWatch */,
 				409CF68B25FD0E5B0085B44E /* CastlesWatch Extension */,
@@ -482,6 +498,14 @@
 				4041F12B25E499D0004A982F /* SlideInViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		40BC92F026063A1800B544B3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		40FBBA3C25A55EFF0019BD72 /* Outcome */ = {
@@ -627,6 +651,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BC93152606408300B544B3 /* CastlesAppViewModel.swift in Sources */,
+				40BC931026063EFF00B544B3 /* StartPhoneSession.swift in Sources */,
 				409CF69125FD0E5B0085B44E /* NotificationController.swift in Sources */,
 				40BFF93D25FEF28D0031C41C /* GetGoldPublisher.swift in Sources */,
 				409CF6AD25FD11130085B44E /* DashboardView.swift in Sources */,
@@ -637,6 +663,7 @@
 				409CF6B925FD122E0085B44E /* Kingdom.swift in Sources */,
 				404328B52601904600CD7C6B /* KingdomService.swift in Sources */,
 				409CF6B525FD11B90085B44E /* DashboardViewModel.swift in Sources */,
+				40BC92F926063A2A00B544B3 /* WatchConnectivityConstants.swift in Sources */,
 				409CF68D25FD0E5B0085B44E /* CastlesApp.swift in Sources */,
 				40BFF93325FEF1890031C41C /* PerformPlayerAction.swift in Sources */,
 				409CF69325FD0E5B0085B44E /* NotificationView.swift in Sources */,
@@ -671,6 +698,7 @@
 				40B9A26825D22BBD00B30B47 /* ProgressView.swift in Sources */,
 				402A1BF125A2C896005A3046 /* CastleCell.swift in Sources */,
 				403309B125D229A100C91C27 /* PerkPresenter.swift in Sources */,
+				40BC92F226063A2500B544B3 /* WatchConnectivityConstants.swift in Sources */,
 				40B511EB25D9765C0005397E /* NotificationService.swift in Sources */,
 				405907BC259E3FF600B98AB4 /* UseCastleItem.swift in Sources */,
 				409D52F1259A30A2002C1509 /* AppDelegate.swift in Sources */,
@@ -678,6 +706,7 @@
 				40AFDCE825D0331A007C5109 /* UsePerk.swift in Sources */,
 				40590794259E2A3E00B98AB4 /* TurnService.swift in Sources */,
 				4059079E259E39A600B98AB4 /* PerformPlayerTurn.swift in Sources */,
+				40BC92FE26063ACD00B544B3 /* StartWatchSession.swift in Sources */,
 				40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */,
 				4041F12C25E499D0004A982F /* SlideInViewController.swift in Sources */,
 				40AFDCE125D02FCE007C5109 /* PerkService.swift in Sources */,
@@ -687,6 +716,7 @@
 				40FBBA3A25A556370019BD72 /* TurnPresenter.swift in Sources */,
 				40AC13D225A0031A00CB81E7 /* GetTurnPublisher.swift in Sources */,
 				40AC13CC25A0002E00CB81E7 /* ActionCell.swift in Sources */,
+				40BC930B26063CF000B544B3 /* SyncWatchContext.swift in Sources */,
 				408E148025C0FD9200E2E26D /* ErrorViewModel.swift in Sources */,
 				409D5308259A30EF002C1509 /* Kingdom.swift in Sources */,
 				405907AC259E3C7800B98AB4 /* PerformBarbarianTurn.swift in Sources */,

@@ -51,10 +51,10 @@ final class DashboardViewModel: ObservableObject {
 
 private extension DashboardViewModel {
   func listen() {
-    dependencies.getGoldPublisher.execute().sink { [weak self] in
+    dependencies.getGoldPublisher.execute().receive(on: RunLoop.main).sink { [weak self] in
       self?.gold = CurrencyPresenter.goldString($0)
     }.store(in: &subscriptions)
-    dependencies.getCastlesPublisher.execute().sink { [weak self] in
+    dependencies.getCastlesPublisher.execute().receive(on: RunLoop.main).sink { [weak self] in
       self?.playerCastles = $0
     }.store(in: &subscriptions)
   }
