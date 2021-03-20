@@ -11,6 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
   struct Dependencies {
     var syncPerkNotifications: SyncPerkNotifications = SyncPerkNotificationsAdapter()
+    var startWatchSession: StartWatchSession = StartWatchSessionAdapter()
   }
   private var dependencies: Dependencies = .init()
   
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     dependencies.syncPerkNotifications.execute()
+    dependencies.startWatchSession.execute()
     return true
   }
   

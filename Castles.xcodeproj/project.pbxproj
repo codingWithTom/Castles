@@ -11,6 +11,7 @@
 		402A1BF125A2C896005A3046 /* CastleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A1BF025A2C896005A3046 /* CastleCell.swift */; };
 		403309B125D229A100C91C27 /* PerkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403309B025D229A100C91C27 /* PerkPresenter.swift */; };
 		4041F12C25E499D0004A982F /* SlideInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F12B25E499D0004A982F /* SlideInViewController.swift */; };
+		404328B52601904600CD7C6B /* KingdomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404328B42601904600CD7C6B /* KingdomService.swift */; };
 		40436DBB25AA112500B24B4A /* CastleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40436DBA25AA112500B24B4A /* CastleItem.swift */; };
 		40590794259E2A3E00B98AB4 /* TurnService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40590793259E2A3E00B98AB4 /* TurnService.swift */; };
 		40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40590796259E2F5100B98AB4 /* OutcomeService.swift */; };
@@ -40,6 +41,20 @@
 		406C0EAF25AE99F700C05870 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406C0EAE25AE99F700C05870 /* ShopCell.swift */; };
 		408E147D25C0FC0700E2E26D /* CastlesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E147C25C0FC0700E2E26D /* CastlesError.swift */; };
 		408E148025C0FD9200E2E26D /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E147F25C0FD9200E2E26D /* ErrorViewModel.swift */; };
+		409CF68125FD0E5A0085B44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409CF68025FD0E5A0085B44E /* Assets.xcassets */; };
+		409CF68825FD0E5B0085B44E /* CastlesWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 409CF68725FD0E5B0085B44E /* CastlesWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		409CF68D25FD0E5B0085B44E /* CastlesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CF68C25FD0E5B0085B44E /* CastlesApp.swift */; };
+		409CF69125FD0E5B0085B44E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CF69025FD0E5B0085B44E /* NotificationController.swift */; };
+		409CF69325FD0E5B0085B44E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CF69225FD0E5B0085B44E /* NotificationView.swift */; };
+		409CF69525FD0E5B0085B44E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CF69425FD0E5B0085B44E /* ComplicationController.swift */; };
+		409CF69725FD0E5B0085B44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409CF69625FD0E5B0085B44E /* Assets.xcassets */; };
+		409CF69A25FD0E5B0085B44E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409CF69925FD0E5B0085B44E /* Preview Assets.xcassets */; };
+		409CF69F25FD0E5B0085B44E /* CastlesWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 409CF67E25FD0E590085B44E /* CastlesWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		409CF6AD25FD11130085B44E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CF6AC25FD11130085B44E /* DashboardView.swift */; };
+		409CF6B525FD11B90085B44E /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CF6B425FD11B90085B44E /* DashboardViewModel.swift */; };
+		409CF6B925FD122E0085B44E /* Kingdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D5307259A30EF002C1509 /* Kingdom.swift */; };
+		409CF6BA25FD122E0085B44E /* Castle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D530B259A314A002C1509 /* Castle.swift */; };
+		409CF6BE25FD12480085B44E /* CurrencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AC13DE25A008EE00CB81E7 /* CurrencyPresenter.swift */; };
 		409D52F1259A30A2002C1509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D52F0259A30A2002C1509 /* AppDelegate.swift */; };
 		409D52F3259A30A2002C1509 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409D52F2259A30A2002C1509 /* SceneDelegate.swift */; };
 		409D52F8259A30A2002C1509 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409D52F6259A30A2002C1509 /* Main.storyboard */; };
@@ -64,16 +79,68 @@
 		40B511F525D97FCB0005397E /* SyncPerkNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */; };
 		40B9A26825D22BBD00B30B47 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9A26725D22BBD00B30B47 /* ProgressView.swift */; };
 		40B9A26C25D22C9E00B30B47 /* BlockedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */; };
+		40BC92F226063A2500B544B3 /* WatchConnectivityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */; };
+		40BC92F926063A2A00B544B3 /* WatchConnectivityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */; };
+		40BC92FE26063ACD00B544B3 /* StartWatchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC92FD26063ACD00B544B3 /* StartWatchSession.swift */; };
+		40BC930B26063CF000B544B3 /* SyncWatchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC930A26063CF000B544B3 /* SyncWatchContext.swift */; };
+		40BC931026063EFF00B544B3 /* StartPhoneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC930F26063EFF00B544B3 /* StartPhoneSession.swift */; };
+		40BC93152606408300B544B3 /* CastlesAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC93142606408300B544B3 /* CastlesAppViewModel.swift */; };
+		40BFF93325FEF1890031C41C /* PerformPlayerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFF93225FEF1890031C41C /* PerformPlayerAction.swift */; };
+		40BFF93825FEF1D00031C41C /* GetCastlesPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFF93725FEF1D00031C41C /* GetCastlesPublisher.swift */; };
+		40BFF93D25FEF28D0031C41C /* GetGoldPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFF93C25FEF28D0031C41C /* GetGoldPublisher.swift */; };
 		40E2A47C25A67CB700052CDE /* OutcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2A47B25A67CB700052CDE /* OutcomeViewModel.swift */; };
 		40FBBA3A25A556370019BD72 /* TurnPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FBBA3925A556370019BD72 /* TurnPresenter.swift */; };
 		40FBBA3F25A55F8C0019BD72 /* OutcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FBBA3E25A55F8C0019BD72 /* OutcomeViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		409CF68925FD0E5B0085B44E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 409D52E5259A30A2002C1509 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 409CF68625FD0E5B0085B44E;
+			remoteInfo = "CastlesWatch Extension";
+		};
+		409CF69D25FD0E5B0085B44E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 409D52E5259A30A2002C1509 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 409CF67D25FD0E590085B44E;
+			remoteInfo = CastlesWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		409CF6A025FD0E5B0085B44E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				409CF69F25FD0E5B0085B44E /* CastlesWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		409CF6A325FD0E5B0085B44E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				409CF68825FD0E5B0085B44E /* CastlesWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		40098CD6259FFD8700407120 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		402A1BF025A2C896005A3046 /* CastleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleCell.swift; sourceTree = "<group>"; };
 		403309B025D229A100C91C27 /* PerkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerkPresenter.swift; sourceTree = "<group>"; };
 		4041F12B25E499D0004A982F /* SlideInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInViewController.swift; sourceTree = "<group>"; };
+		404328B42601904600CD7C6B /* KingdomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingdomService.swift; sourceTree = "<group>"; };
 		40436DBA25AA112500B24B4A /* CastleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleItem.swift; sourceTree = "<group>"; };
 		40590793259E2A3E00B98AB4 /* TurnService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnService.swift; sourceTree = "<group>"; };
 		40590796259E2F5100B98AB4 /* OutcomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeService.swift; sourceTree = "<group>"; };
@@ -103,6 +170,20 @@
 		406C0EAE25AE99F700C05870 /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		408E147C25C0FC0700E2E26D /* CastlesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastlesError.swift; sourceTree = "<group>"; };
 		408E147F25C0FD9200E2E26D /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		409CF67E25FD0E590085B44E /* CastlesWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CastlesWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		409CF68025FD0E5A0085B44E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		409CF68225FD0E5A0085B44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		409CF68725FD0E5B0085B44E /* CastlesWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CastlesWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		409CF68C25FD0E5B0085B44E /* CastlesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastlesApp.swift; sourceTree = "<group>"; };
+		409CF69025FD0E5B0085B44E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		409CF69225FD0E5B0085B44E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		409CF69425FD0E5B0085B44E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		409CF69625FD0E5B0085B44E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		409CF69925FD0E5B0085B44E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		409CF69B25FD0E5B0085B44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		409CF69C25FD0E5B0085B44E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		409CF6AC25FD11130085B44E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		409CF6B425FD11B90085B44E /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		409D52ED259A30A2002C1509 /* Castles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Castles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409D52F0259A30A2002C1509 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		409D52F2259A30A2002C1509 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,12 +210,27 @@
 		40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPerkNotifications.swift; sourceTree = "<group>"; };
 		40B9A26725D22BBD00B30B47 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		40B9A26B25D22C9E00B30B47 /* BlockedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedProgressView.swift; sourceTree = "<group>"; };
+		40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityConstants.swift; sourceTree = "<group>"; };
+		40BC92FD26063ACD00B544B3 /* StartWatchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWatchSession.swift; sourceTree = "<group>"; };
+		40BC930A26063CF000B544B3 /* SyncWatchContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncWatchContext.swift; sourceTree = "<group>"; };
+		40BC930F26063EFF00B544B3 /* StartPhoneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPhoneSession.swift; sourceTree = "<group>"; };
+		40BC93142606408300B544B3 /* CastlesAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastlesAppViewModel.swift; sourceTree = "<group>"; };
+		40BFF93225FEF1890031C41C /* PerformPlayerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformPlayerAction.swift; sourceTree = "<group>"; };
+		40BFF93725FEF1D00031C41C /* GetCastlesPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCastlesPublisher.swift; sourceTree = "<group>"; };
+		40BFF93C25FEF28D0031C41C /* GetGoldPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoldPublisher.swift; sourceTree = "<group>"; };
 		40E2A47B25A67CB700052CDE /* OutcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeViewModel.swift; sourceTree = "<group>"; };
 		40FBBA3925A556370019BD72 /* TurnPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnPresenter.swift; sourceTree = "<group>"; };
 		40FBBA3E25A55F8C0019BD72 /* OutcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		409CF68425FD0E5B0085B44E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		409D52EA259A30A2002C1509 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -176,6 +272,14 @@
 			path = Progress;
 			sourceTree = "<group>";
 		};
+		404328AB26018FB400CD7C6B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				404328B42601904600CD7C6B /* KingdomService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		4059079C259E399300B98AB4 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +300,8 @@
 				40B511F425D97FCB0005397E /* SyncPerkNotifications.swift */,
 				405907BB259E3FF600B98AB4 /* UseCastleItem.swift */,
 				40AFDCE725D0331A007C5109 /* UsePerk.swift */,
+				40BC92FD26063ACD00B544B3 /* StartWatchSession.swift */,
+				40BC930A26063CF000B544B3 /* SyncWatchContext.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -236,10 +342,77 @@
 			path = Shop;
 			sourceTree = "<group>";
 		};
+		409CF67F25FD0E590085B44E /* CastlesWatch */ = {
+			isa = PBXGroup;
+			children = (
+				409CF68025FD0E5A0085B44E /* Assets.xcassets */,
+				409CF68225FD0E5A0085B44E /* Info.plist */,
+			);
+			path = CastlesWatch;
+			sourceTree = "<group>";
+		};
+		409CF68B25FD0E5B0085B44E /* CastlesWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				404328AB26018FB400CD7C6B /* Services */,
+				409CF6C325FD12640085B44E /* UseCases */,
+				409CF6C225FD12520085B44E /* Scenes */,
+				409CF68C25FD0E5B0085B44E /* CastlesApp.swift */,
+				40BC93142606408300B544B3 /* CastlesAppViewModel.swift */,
+				409CF69025FD0E5B0085B44E /* NotificationController.swift */,
+				409CF69225FD0E5B0085B44E /* NotificationView.swift */,
+				409CF69425FD0E5B0085B44E /* ComplicationController.swift */,
+				409CF69625FD0E5B0085B44E /* Assets.xcassets */,
+				409CF69B25FD0E5B0085B44E /* Info.plist */,
+				409CF69C25FD0E5B0085B44E /* PushNotificationPayload.apns */,
+				409CF69825FD0E5B0085B44E /* Preview Content */,
+			);
+			path = "CastlesWatch Extension";
+			sourceTree = "<group>";
+		};
+		409CF69825FD0E5B0085B44E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				409CF69925FD0E5B0085B44E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		409CF6AB25FD11070085B44E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				409CF6AC25FD11130085B44E /* DashboardView.swift */,
+				409CF6B425FD11B90085B44E /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		409CF6C225FD12520085B44E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				409CF6AB25FD11070085B44E /* Dashboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		409CF6C325FD12640085B44E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				40BFF93225FEF1890031C41C /* PerformPlayerAction.swift */,
+				40BFF93725FEF1D00031C41C /* GetCastlesPublisher.swift */,
+				40BFF93C25FEF28D0031C41C /* GetGoldPublisher.swift */,
+				40BC930F26063EFF00B544B3 /* StartPhoneSession.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		409D52E4259A30A2002C1509 = {
 			isa = PBXGroup;
 			children = (
+				40BC92F026063A1800B544B3 /* Shared */,
 				409D52EF259A30A2002C1509 /* Castles */,
+				409CF67F25FD0E590085B44E /* CastlesWatch */,
+				409CF68B25FD0E5B0085B44E /* CastlesWatch Extension */,
 				409D52EE259A30A2002C1509 /* Products */,
 				4069D1EB25C6F69F00375502 /* Frameworks */,
 			);
@@ -249,6 +422,8 @@
 			isa = PBXGroup;
 			children = (
 				409D52ED259A30A2002C1509 /* Castles.app */,
+				409CF67E25FD0E590085B44E /* CastlesWatch.app */,
+				409CF68725FD0E5B0085B44E /* CastlesWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,6 +500,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		40BC92F026063A1800B544B3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				40BC92F126063A2500B544B3 /* WatchConnectivityConstants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		40FBBA3C25A55EFF0019BD72 /* Outcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +520,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		409CF67D25FD0E590085B44E /* CastlesWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 409CF6A725FD0E5B0085B44E /* Build configuration list for PBXNativeTarget "CastlesWatch" */;
+			buildPhases = (
+				409CF67C25FD0E590085B44E /* Resources */,
+				409CF6A325FD0E5B0085B44E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				409CF68A25FD0E5B0085B44E /* PBXTargetDependency */,
+			);
+			name = CastlesWatch;
+			productName = CastlesWatch;
+			productReference = 409CF67E25FD0E590085B44E /* CastlesWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		409CF68625FD0E5B0085B44E /* CastlesWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 409CF6A625FD0E5B0085B44E /* Build configuration list for PBXNativeTarget "CastlesWatch Extension" */;
+			buildPhases = (
+				409CF68325FD0E5B0085B44E /* Sources */,
+				409CF68425FD0E5B0085B44E /* Frameworks */,
+				409CF68525FD0E5B0085B44E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CastlesWatch Extension";
+			productName = "CastlesWatch Extension";
+			productReference = 409CF68725FD0E5B0085B44E /* CastlesWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		409D52EC259A30A2002C1509 /* Castles */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 409D5301259A30A2002C1509 /* Build configuration list for PBXNativeTarget "Castles" */;
@@ -344,10 +561,12 @@
 				409D52E9259A30A2002C1509 /* Sources */,
 				409D52EA259A30A2002C1509 /* Frameworks */,
 				409D52EB259A30A2002C1509 /* Resources */,
+				409CF6A025FD0E5B0085B44E /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				409CF69E25FD0E5B0085B44E /* PBXTargetDependency */,
 			);
 			name = Castles;
 			productName = Castles;
@@ -360,9 +579,15 @@
 		409D52E5259A30A2002C1509 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					409CF67D25FD0E590085B44E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					409CF68625FD0E5B0085B44E = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					409D52EC259A30A2002C1509 = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -382,11 +607,30 @@
 			projectRoot = "";
 			targets = (
 				409D52EC259A30A2002C1509 /* Castles */,
+				409CF67D25FD0E590085B44E /* CastlesWatch */,
+				409CF68625FD0E5B0085B44E /* CastlesWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		409CF67C25FD0E590085B44E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				409CF68125FD0E5A0085B44E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		409CF68525FD0E5B0085B44E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				409CF69A25FD0E5B0085B44E /* Preview Assets.xcassets in Resources */,
+				409CF69725FD0E5B0085B44E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		409D52EB259A30A2002C1509 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,6 +647,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		409CF68325FD0E5B0085B44E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40BC93152606408300B544B3 /* CastlesAppViewModel.swift in Sources */,
+				40BC931026063EFF00B544B3 /* StartPhoneSession.swift in Sources */,
+				409CF69125FD0E5B0085B44E /* NotificationController.swift in Sources */,
+				40BFF93D25FEF28D0031C41C /* GetGoldPublisher.swift in Sources */,
+				409CF6AD25FD11130085B44E /* DashboardView.swift in Sources */,
+				409CF69525FD0E5B0085B44E /* ComplicationController.swift in Sources */,
+				40BFF93825FEF1D00031C41C /* GetCastlesPublisher.swift in Sources */,
+				409CF6BA25FD122E0085B44E /* Castle.swift in Sources */,
+				409CF6BE25FD12480085B44E /* CurrencyPresenter.swift in Sources */,
+				409CF6B925FD122E0085B44E /* Kingdom.swift in Sources */,
+				404328B52601904600CD7C6B /* KingdomService.swift in Sources */,
+				409CF6B525FD11B90085B44E /* DashboardViewModel.swift in Sources */,
+				40BC92F926063A2A00B544B3 /* WatchConnectivityConstants.swift in Sources */,
+				409CF68D25FD0E5B0085B44E /* CastlesApp.swift in Sources */,
+				40BFF93325FEF1890031C41C /* PerformPlayerAction.swift in Sources */,
+				409CF69325FD0E5B0085B44E /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		409D52E9259A30A2002C1509 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,6 +698,7 @@
 				40B9A26825D22BBD00B30B47 /* ProgressView.swift in Sources */,
 				402A1BF125A2C896005A3046 /* CastleCell.swift in Sources */,
 				403309B125D229A100C91C27 /* PerkPresenter.swift in Sources */,
+				40BC92F226063A2500B544B3 /* WatchConnectivityConstants.swift in Sources */,
 				40B511EB25D9765C0005397E /* NotificationService.swift in Sources */,
 				405907BC259E3FF600B98AB4 /* UseCastleItem.swift in Sources */,
 				409D52F1259A30A2002C1509 /* AppDelegate.swift in Sources */,
@@ -438,6 +706,7 @@
 				40AFDCE825D0331A007C5109 /* UsePerk.swift in Sources */,
 				40590794259E2A3E00B98AB4 /* TurnService.swift in Sources */,
 				4059079E259E39A600B98AB4 /* PerformPlayerTurn.swift in Sources */,
+				40BC92FE26063ACD00B544B3 /* StartWatchSession.swift in Sources */,
 				40590797259E2F5100B98AB4 /* OutcomeService.swift in Sources */,
 				4041F12C25E499D0004A982F /* SlideInViewController.swift in Sources */,
 				40AFDCE125D02FCE007C5109 /* PerkService.swift in Sources */,
@@ -447,6 +716,7 @@
 				40FBBA3A25A556370019BD72 /* TurnPresenter.swift in Sources */,
 				40AC13D225A0031A00CB81E7 /* GetTurnPublisher.swift in Sources */,
 				40AC13CC25A0002E00CB81E7 /* ActionCell.swift in Sources */,
+				40BC930B26063CF000B544B3 /* SyncWatchContext.swift in Sources */,
 				408E148025C0FD9200E2E26D /* ErrorViewModel.swift in Sources */,
 				409D5308259A30EF002C1509 /* Kingdom.swift in Sources */,
 				405907AC259E3C7800B98AB4 /* PerformBarbarianTurn.swift in Sources */,
@@ -464,6 +734,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		409CF68A25FD0E5B0085B44E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 409CF68625FD0E5B0085B44E /* CastlesWatch Extension */;
+			targetProxy = 409CF68925FD0E5B0085B44E /* PBXContainerItemProxy */;
+		};
+		409CF69E25FD0E5B0085B44E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 409CF67D25FD0E590085B44E /* CastlesWatch */;
+			targetProxy = 409CF69D25FD0E5B0085B44E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		409D52F6259A30A2002C1509 /* Main.storyboard */ = {
@@ -485,6 +768,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		409CF6A125FD0E5B0085B44E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = CastlesWatch_Extension;
+				INFOPLIST_FILE = CastlesWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodingWithTom.Castles.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		409CF6A225FD0E5B0085B44E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = CastlesWatch_Extension;
+				INFOPLIST_FILE = CastlesWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodingWithTom.Castles.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		409CF6A425FD0E5B0085B44E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CastlesWatch Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "CastlesWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodingWithTom.Castles.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		409CF6A525FD0E5B0085B44E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CastlesWatch Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "CastlesWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CodingWithTom.Castles.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
 		409D52FF259A30A2002C1509 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -640,6 +1007,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		409CF6A625FD0E5B0085B44E /* Build configuration list for PBXNativeTarget "CastlesWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				409CF6A425FD0E5B0085B44E /* Debug */,
+				409CF6A525FD0E5B0085B44E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		409CF6A725FD0E5B0085B44E /* Build configuration list for PBXNativeTarget "CastlesWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				409CF6A125FD0E5B0085B44E /* Debug */,
+				409CF6A225FD0E5B0085B44E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		409D52E8259A30A2002C1509 /* Build configuration list for PBXProject "Castles" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

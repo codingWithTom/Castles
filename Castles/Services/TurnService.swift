@@ -11,6 +11,7 @@ import Combine
 protocol TurnService {
   var turnPublisher: AnyPublisher<[Turn], Never> { get }
   func popTurn()
+  func isPlayerTurn() -> Bool
 }
 
 final class TurnServiceAdapter: TurnService {
@@ -37,6 +38,10 @@ final class TurnServiceAdapter: TurnService {
     newTurns.removeFirst()
     newTurns.append(getNextTurn())
     self.turns = newTurns
+  }
+  
+  func isPlayerTurn() -> Bool {
+    return turns.first?.isPlayer ?? false
   }
 }
 

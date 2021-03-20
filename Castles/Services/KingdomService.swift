@@ -11,6 +11,7 @@ import Combine
 protocol KingdomService {
   var castlesPublisher: AnyPublisher<[Castle], Never> { get }
   var goldPublisher: AnyPublisher<Int, Never> { get }
+  var kingdomPublisher: AnyPublisher<Kingdom, Never> { get }
   func getCastles() -> [Castle]
   func getCastle(withID: String) -> Castle?
   func getCurrentGold() -> Int
@@ -29,13 +30,16 @@ final class KingdomServiceAdapter: KingdomService {
     didSet {
       castleCurrentValue.value = kingdom.castles
       goldCurrentValue.value = kingdom.gold
+      kingdomCurrentValue.value = kingdom
       saveData()
     }
   }
   private var castleCurrentValue = CurrentValueSubject<[Castle], Never>([])
   private var goldCurrentValue = CurrentValueSubject<Int, Never>(0)
+  private lazy var kingdomCurrentValue = CurrentValueSubject<Kingdom, Never>(kingdom)
   var castlesPublisher: AnyPublisher<[Castle], Never> { castleCurrentValue.eraseToAnyPublisher() }
   var goldPublisher: AnyPublisher<Int, Never> { goldCurrentValue.eraseToAnyPublisher() }
+  var kingdomPublisher: AnyPublisher<Kingdom, Never> { kingdomCurrentValue.eraseToAnyPublisher() }
   
   private init() {
     self.retrieveData()
