@@ -34,6 +34,7 @@ final class SyncWatchContextAdapter: SyncWatchContext {
 
 private extension SyncWatchContextAdapter {
   func updateContextWith(_ kingdom: Kingdom) {
+    guard WCSession.default.isReachable else { return }
     guard
       let kingdomData = try? JSONEncoder().encode(kingdom),
       let kingdomDictionary = try? JSONSerialization.jsonObject(with: kingdomData, options: .allowFragments) as? [String: Any]
