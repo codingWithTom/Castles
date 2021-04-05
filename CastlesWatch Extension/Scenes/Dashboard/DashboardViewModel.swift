@@ -23,7 +23,7 @@ final class DashboardViewModel: ObservableObject {
   private var playerCastles: [Castle] = [] {
     didSet {
       castles = playerCastles.map {
-        CastleViewModel(name: $0.name, attack: "\($0.attackPower)", defense: "\($0.defensePower)")
+        CastleViewModel(name: $0.name, attack: "\($0.attackPower)", defense: "\($0.defensePower)", hp: $0.hp)
       }
     }
   }

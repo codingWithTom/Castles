@@ -11,6 +11,7 @@ struct CastleViewModel {
   let name: String
   let attack: String
   let defense: String
+  let hp: Int
 }
 
 struct DashboardView: View {

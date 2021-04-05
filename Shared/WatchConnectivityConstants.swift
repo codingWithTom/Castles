@@ -13,7 +13,8 @@ struct WatchConnectivityConstants {
     case fortify
   }
   
-  static let context = "com.codingWithTom.Castles.watchContext"
+  static let kingdom = "com.codingWithTom.Castles.watchContext.kingdom"
+  static let perks = "com.codingWithTom.Castles.watchContext.perks"
   static let castleID = "com.codingWithTom.Castles.castleID"
   static let action = "com.codingWithTom.Castles.action"
 }

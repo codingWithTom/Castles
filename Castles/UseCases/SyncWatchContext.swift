@@ -16,6 +16,7 @@ protocol SyncWatchContext {
 final class SyncWatchContextAdapter: SyncWatchContext {
   struct Dependencies {
     var kingdomService: KingdomService = KingdomServiceAdapter.shared
+    var perkService: PerkService = PerkServiceAdapter.shared
   }
   
   private let dependencies: Dependencies
@@ -26,26 +27,48 @@ final class SyncWatchContextAdapter: SyncWatchContext {
   }
   
   func execute() {
-    dependencies.kingdomService.kingdomPublisher.sink { [weak self] kingdom in
-      self?.updateContextWith(kingdom)
+    dependencies.kingdomService.kingdomPublisher.sink { [weak self] _ in
+      self?.updateContext()
+    }.store(in: &subscriptions)
+    dependencies.perkService.perkPublisher.sink { [weak self] _ in
+      self?.updateContext()
     }.store(in: &subscriptions)
   }
 }
 
 private extension SyncWatchContextAdapter {
-  func updateContextWith(_ kingdom: Kingdom) {
+  func updateContext() {
     guard WCSession.default.isReachable else { return }
-    guard
-      let kingdomData = try? JSONEncoder().encode(kingdom),
-      let kingdomDictionary = try? JSONSerialization.jsonObject(with: kingdomData, options: .allowFragments) as? [String: Any]
-    else {
-      print("Error updating application context")
-      return
-    }
     do {
-      try WCSession.default.updateApplicationContext([WatchConnectivityConstants.context: kingdomDictionary])
+      try WCSession.default.updateApplicationContext(
+        [
+          WatchConnectivityConstants.kingdom: getKindomContext(),
+          WatchConnectivityConstants.perks: getPerksContext()
+        ])
     } catch {
       print("Error sending application context")
     }
+  }
+  
+  func getKindomContext() -> [String: Any] {
+    guard
+      let kingdomData = try? JSONEncoder().encode(dependencies.kingdomService.getKingdom()),
+      let kingdomDictionary = try? JSONSerialization.jsonObject(with: kingdomData, options: .allowFragments) as? [String: Any]
+    else {
+      print("Error updating kingdom context")
+      return [:]
+    }
+    return kingdomDictionary
+  }
+  
+  func getPerksContext() -> [[String: Any]] {
+    guard
+      let perkData = try? JSONEncoder().encode(dependencies.perkService.getPerks()),
+      let perkDictionary = try? JSONSerialization.jsonObject(with: perkData, options: .allowFragments) as? [[String: Any]]
+    else {
+      print("Error updating perk context")
+      return [[:]]
+    }
+    return perkDictionary
   }
 }

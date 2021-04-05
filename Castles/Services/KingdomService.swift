@@ -15,6 +15,7 @@ protocol KingdomService {
   func getCastles() -> [Castle]
   func getCastle(withID: String) -> Castle?
   func getCurrentGold() -> Int
+  func getKingdom() -> Kingdom
   func updateCastle(_: Castle)
   func createCastle(withName: String, imageName: String)
   func modifyGoldWith(quantity: Int) throws
@@ -55,6 +56,10 @@ final class KingdomServiceAdapter: KingdomService {
   
   func getCurrentGold() -> Int {
     return kingdom.gold
+  }
+  
+  func getKingdom() -> Kingdom {
+    return kingdom
   }
   
   func updateCastle(_ castle: Castle) {
